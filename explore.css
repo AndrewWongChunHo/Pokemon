@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    transition: 0.5s
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(#2b1055, #000);
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    z-index: 10000;
+}
+
+
+nav .logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    margin-left: 20px;
+}
+
+.nav-links {
+    float: right;
+    margin-right: 110px;
+}
+
+.nav-links li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+.nav-links li a{
+    padding: 6px 15px;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.nav-links li a:hover{
+    background: #fff;
+    color: #2b1055;
+    transition: .5s;
+}
+
+.active1:nth-child(1) {
+    background: #fff;
+    color: #2b1055;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+
+
+@media (max-width: 900px){
+    nav .logo{
+        font-size:30px;
+        padding-left: 14%;
+    }
+
+    .nav-links li a{
+        font-size: 16px;
+
+    }
+
+    #btn {
+        padding-left: 30%;
+    }
+}
+
+@media (max-width: 858px) {
+
+    #text {
+        padding-left: 1%;
+    }
+
+    #btn {
+        padding-left: 10%;
+    }
+
+    .checkbtn{
+        display: block;
+        
+    }
+    .nav-links{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-image: url(gengermove.gif);
+        background-size: cover;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .10s;
+    }
+     /*.nav-links li{
+        display: block;
+    }
+    .nav-links a{
+        font-size: 20px;
+    }*/
+
+    #check {
+        float: right;
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        top: 80px;
+        left: 0;
+    }
+
+
+}
+
+/*section*/
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container
+{
+	position: absolute;
+    width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.parallax{
+    background: url(./background.jpg);
+	background-size: cover;
+}
+
+.mixBlnd
+{
+	background-blend-mode: screen;
+}
+
+.parallax img
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.splitting .char {
+    animation: slide-in .7s cubic-bezier(.3, 0, .7, 1) both;
+    animation-delay: calc(50ms * var(--char-index));
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: scale(0.4) translateY(80%);
+      opacity: 0;
+    }
+  }
